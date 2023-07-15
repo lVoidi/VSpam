@@ -38,8 +38,6 @@ if __name__ == "__main__":
     else:
         length = int(input("your content length?"))
         
-
-
     while running:
         while keyboard.is_pressed(SCROLL_LOCK):
             if randomize:
@@ -48,6 +46,7 @@ if __name__ == "__main__":
                     charset_content = list(charset.read())
                 content = ''.join(random.choice(charset_content) for _ in range(length))
                 pyperclip.copy(content)
-            keyboard.press_and_release("ctrl+v+enter")
+            keyboard.press_and_release("ctrl+v")
+            keyboard.press_and_release("enter")
             time.sleep(cooldown)
             
